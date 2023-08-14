@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet App - Login</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../images/Image 1.png');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #loginStatus {
+            font-weight: bold;
+            font-size: 1.2em;
+            position: fixed;
+            top: 50px;
+            left: 20px;
+        }
+
+        nav {
+            width: 100%;
+            background-color: white;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            margin-top: 80px; /* To prevent overlap with header */
+            width: 500px; /* Increased width */
+            padding: 40px; /* Increased padding */
+            background-color: rgba(255,255,255,0.8);
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px; /* Increased label bottom margin */
+        }
+
+        input {
+            margin-bottom: 30px; /* Increased input bottom margin */
+            padding: 15px; /* Increased input padding */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        nav button {
+            color: #007BFF;
+            background: none;
+            border: none;
+            padding: 0;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+        }
+
+        nav button:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body >
+    <nav>
+        <ul>
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="CreateWallet.html">Create Wallet</a></li>
+            <li><a href="SendCoins.html">Send Coins</a></li>
+            <li><a href="TransactionHistory.html">Transaction History</a></li>
+            <li><a href="RestoreAccount.html">Restore Account</a></li>
+            <li><a href="login2.html">Login</a></li>
+            <li><button onclick="logOut()">Log Out</button></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Login to Your Wallet</h1>
+        <form id="loginForm" onsubmit="event.preventDefault(); login();">
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" required>
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <div id="loginResult"></div>
+    </main>
+    
+    
+    <script src="../JS/lightwallet.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.5.2/dist/web3.min.js"></script>
+    <script src="../JS/marioTest.js"></script>      
+</body>
+
+</html>
+
+
